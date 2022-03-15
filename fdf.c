@@ -6,7 +6,7 @@
 /*   By: hkaddour <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 13:28:16 by hkaddour          #+#    #+#             */
-/*   Updated: 2022/03/15 18:56:44 by hkaddour         ###   ########.fr       */
+/*   Updated: 2022/03/15 19:27:01 by hkaddour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_weight(char *av, char **split)
 	return (i);
 }
 
-int	**ft_alloc(end *ptr, char *av)
+int	**ft_alloc(/*end *ptr,*/ char *av)
 {
 	int	i;
 	int	j;
@@ -55,7 +55,7 @@ int	**ft_alloc(end *ptr, char *av)
 		/*ptr->read*/ lo.rd = get_next_line(lo.fdd);
 		j++;
 	}
-	//lo.arr[j] = NULL;
+	lo.arr[j] = NULL;
 	return (lo.arr);
 }
 
@@ -99,25 +99,28 @@ int	main(int ac, char **av)
 {
 	end ptr;
 
-//	int	k = 0;
-//	int	j = 0;
-	ptr.i = 0;
+	int	k = 0;
+	int	j = 0;
+	//ptr.i = 0;
+	int	i = 0;
 	ptr.fd = open(av[1], O_RDONLY);
-	if (ptr.fd < 0)
-		return (0);
+	//if (ptr.fd < 0)
+	//	return (0);
 	ptr.read = get_next_line(ptr.fd);
 	while (ptr.read)
 	{
 		ptr.read = get_next_line(ptr.fd);
-		ptr.i++;
+		//ptr.i++;
+		i++;
 	}
-	ptr.arr = (int **) malloc(sizeof(int *) * ptr.i + 1);
-	/*ptr.alloc =*/ ft_alloc(&ptr, av[1]);
-	//while (ptr.alloc[k] != NULL)
-	//{
-	//	printf("%d", ptr.alloc[k][j]);
-	//	j++;
-	//}
+	//printf("what");
+	ptr.arr = (int **) malloc(sizeof(int *) * i + 1);
+	ptr.alloc = ft_alloc(/*&ptr,*/ av[1]);
+	while (ptr.alloc[k] != NULL)
+	{
+		printf("%d", ptr.alloc[k][j]);
+		j++;
+	}
 	return (0);
 }
 
