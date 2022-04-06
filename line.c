@@ -23,7 +23,7 @@ char	*get_line(char *str, line *t_line)
 		i++;
 	if (str[0] == '\0')
 		return (NULL);
-	t_line->ptr = malloc(sizeof(char) * i + 1);
+	t_line->ptr = malloc(sizeof(char) * i /*+ 1*/);
 	if (!t_line->ptr)
 		return (NULL);
 	i = 0;
@@ -32,38 +32,20 @@ char	*get_line(char *str, line *t_line)
 		t_line->ptr[i] = str[i];
 		i++;
 	}
-	if (str[i] == '\n')
-		t_line->ptr[i++] = '\n';
+	//if (str[i] == '\n')
+	//	t_line->ptr[i++] = '\n';
 	t_line->ptr[i] = 0;
 	return (t_line->ptr);
 }
 
 char	*next_line(char *str, line *t_line)
 {
-	int	i;
-	int	j;
+	char	*ptr;
 
-	j = 0;
-	i = ft_strlen(str);
-	if (!str)
-		return (NULL);
-	while (str[j] != '\n' && str[j])
-		j++;
-	if (str[j] == '\0')
-	{
-		free(str);
-		return (NULL);
-	}
-	t_line->ptr = malloc(sizeof(char) * (i - j));
-	if (!t_line->ptr)
-		return (NULL);
-	i = 0;
-	j++;
-	while (str[j])
-		t_line->ptr[i++] = str[j++];
-	t_line->ptr[i] = '\0';
+	ptr = malloc(sizeof(char) * 1);
+	ptr[0] = 0;
 	free(str);
-	return (t_line->ptr);
+	return (ptr);
 }
 
 int	newline(char *str)
