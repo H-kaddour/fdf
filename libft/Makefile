@@ -6,64 +6,71 @@
 #    By: hkaddour <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 20:10:00 by hkaddour          #+#    #+#              #
-#    Updated: 2021/12/07 13:40:17 by hkaddour         ###   ########.fr        #
+#    Updated: 2022/04/25 22:10:34 by hkaddour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-cc = gcc
-header = libft.h
+CC = gcc
+HEADER = libft.h
 CFLAGS = -Wall -Wextra -Werror
-srcs =	ft_atoi.c \
-		ft_putnbr_fd.c \
-		ft_strlen.c \
-		ft_bzero.c \
- 		ft_putstr_fd.c \
-		ft_strmapi.c \
-		ft_calloc.c \
-		ft_memchr.c \
-		ft_split.c \
-		ft_strncmp.c \
-		ft_isalnum.c \
-		ft_memcmp.c \
-		ft_strchr.c \
-		ft_strnstr.c \
-		ft_isalpha.c \
-		ft_memcpy.c \
-		ft_strdup.c \
-		ft_strrchr.c \
-		ft_isascii.c \
-		ft_memmove.c \
-		ft_striteri.c \
-		ft_strtrim.c \
-		ft_isdigit.c \
-		ft_memset.c \
-		ft_strjoin.c \
-		ft_substr.c \
-		ft_isprint.c \
-		ft_putchar_fd.c \
-		ft_strlcat.c \
-		ft_tolower.c \
-		ft_itoa.c \
-		ft_putendl_fd.c \
-		ft_strlcpy.c \
-		ft_toupper.c
+SCRS =	ft_atoi.c \
+				ft_putnbr_fd.c \
+				ft_strlen.c \
+				ft_bzero.c \
+				ft_putstr_fd.c \
+				ft_strmapi.c \
+				ft_calloc.c \
+				ft_memchr.c \
+				ft_split.c \
+				ft_strncmp.c \
+				ft_isalnum.c \
+				ft_memcmp.c \
+				ft_strchr.c \
+				ft_strnstr.c \
+				ft_isalpha.c \
+				ft_memcpy.c \
+				ft_strdup.c \
+				ft_strrchr.c \
+				ft_isascii.c \
+				ft_memmove.c \
+				ft_striteri.c \
+				ft_strtrim.c \
+				ft_isdigit.c \
+				ft_memset.c \
+				ft_strjoin.c \
+				ft_substr.c \
+				ft_isprint.c \
+				ft_putchar_fd.c \
+				ft_strlcat.c \
+				ft_tolower.c \
+				ft_itoa.c \
+				ft_putendl_fd.c \
+				ft_strlcpy.c \
+				ft_toupper.c
 
-objs = $(srcs:.c=.o)
+OBJS = $(SCRS:.c=.o)
+BGreen=\033[1;32m
+BYellow=\033[1;33m
+BBlue=\033[1;34m
+BPurple=\033[1;38;5;205m
+BRed=\033[1;31m
+lo=\033[0m
 
 all : $(NAME)
+	@echo "$(BYellow)Compiling libft...$(lo)"
 
 %.o: %.c
-	$(cc) $(CFLAGS) -c $^ -I $(header)
+	@$(CC) $(CFLAGS) -c $^ -I $(HEADER)
 
-$(NAME): $(objs)
-	ar -rc $@ $^
+$(NAME): $(OBJS)
+	@ar -rc $@ $^
 
 clean:
-	rm -rf $(objs)
+	@rm -rf $(OBJS)
 
 fclean : clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 
