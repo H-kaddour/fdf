@@ -25,9 +25,11 @@ Check down below for all the tutorial.
 
 ### Tutorials:
 **A brief start for graphic:**
+
 https://github.com/qst0/ft_libgfx
 
 **Mlx source:**
+
 https://qst0.github.io/ft_libgfx/
 https://github.com/keuhdall/images_example#2-how-does-it-work-
 https://github.com/VBrazhnik/FdF/wiki/How-to-create-linear-gradient%3F
@@ -39,6 +41,7 @@ https://coder-question.com/cq-blog/605260
 https://velog.io/@dogfootbirdfoot/MiniLibX
 
 **Draw algo:**
+
 https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
 https://www.youtube.com/watch?v=RGB-wlatStc
 https://www.geeksforgeeks.org/bresenhams-line-generation-algorithm/
@@ -46,10 +49,12 @@ https://www.youtube.com/watch?v=W5P8GlaEOSI
 https://www.youtube.com/watch?v=Qyt1ccpm1hY&t=1s
 
 **Makefile**
+
 https://stackoverflow.com/questions/36719876/how-to-filter-out-files-with-multiple-criteria-in-a-makefile
 https://superuser.com/questions/370575/how-to-run-make-file-from-any-directory
 
 **Isometric:**
+
 https://en.wikipedia.org/wiki/Isometric_projection#:~:text=Isometric%20projection%20is%20a%20method,of%20them%20is%20120%20degrees.
 https://www.engineeringchoice.com/isometric-projection/
 https://a5huynh.github.io/posts/2019/isometric-rotation/
@@ -60,6 +65,30 @@ https://www.youtube.com/watch?v=mhd9FXYdf4s
 https://www.youtube.com/watch?v=cgPYLJ-s5II
 https://www.youtube.com/watch?v=RWJsy9ufxtc&t=3s
 https://stackoverflow.com/questions/28607713/convert-3d-coordinates-to-2d-in-an-isometric-projection
+
 ![image](img/3d_iso.pbm)
 
 ### For use:
+Clone this repo then cd to either `Fdf_image` or `Fdf_pixel`.
+```
+make or make bonus
+./fdf ../maps/42.fdf
+```
+Try other maps like mars and fractol.
+
+### Imgaes:
+![image](img/make.png)
+![image](img/gifmap.gif)
+
+**ISO**
+
+![image](img/france.png)
+![image](img/fractol.png)
+![image](img/t1.png)
+![image](img/japan.png)
+
+**Flat**
+![image](img/fractolfaat.png)
+![image](img/t1flat.png)
+
+**Thank you for reading, y'all have a good one :rocket:.**
