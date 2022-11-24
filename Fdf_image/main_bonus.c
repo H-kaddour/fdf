@@ -6,7 +6,7 @@
 /*   By: hkaddour <hkaddour@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 19:51:54 by hkaddour          #+#    #+#             */
-/*   Updated: 2022/04/25 21:24:37 by hkaddour         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:23:18 by hkaddour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ int	main(int ac, char **av)
 	t_data.window = mlx_new_window(t_data.mlx, WIN_W, WIN_H, "fdf");
 	draw(&t_data);
 	mlx_hook(t_data.window, 17, 1L << 0, escape, &t_data);
-	mlx_key_hook(t_data.window, key_strokes, &t_data);
+	//mlx_key_hook(t_data.window, key_strokes, &t_data);
+	//mlx_loop_hook(t_data.init, key_strokes, &t_data);
+  mlx_hook(t_data.window, 2, 1L<<0, key_strokes, &t_data);
 	mlx_mouse_hook(t_data.window, mouse, &t_data);
 	mlx_loop(t_data.mlx);
 	return (0);

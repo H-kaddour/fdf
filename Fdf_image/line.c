@@ -6,7 +6,7 @@
 /*   By: hkaddour <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 16:44:30 by hkaddour          #+#    #+#             */
-/*   Updated: 2022/04/23 21:36:32 by hkaddour         ###   ########.fr       */
+/*   Updated: 2022/11/14 11:13:26 by hkaddour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static char	*get_line(char *str, t_gnl *t_line)
 		i++;
 	if (str[0] == '\0')
 		return (NULL);
-	t_line->ptr = malloc(sizeof(char) * i);
+	t_line->ptr = malloc(sizeof(char) * i + 1);
 	if (!t_line->ptr)
 		return (NULL);
 	i = 0;
